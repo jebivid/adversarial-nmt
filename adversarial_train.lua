@@ -500,7 +500,6 @@ function train(train_data, valid_data)
           for j = 1, #drnn_state_enc do
             drnn_state_enc[j]:copy(dlst[j+1+data.num_source_features])
           end
-          local cut_it = false
           for ii=1, source:size(2) do 
             local instance = torch.squeeze(source[{{},{ii},{}}])     
             local M = torch.mm(encoder_clones[t].modules[3].gradInput[ii] , one_hot_layer.modules[3].weight)  
@@ -510,9 +509,9 @@ function train(train_data, valid_data)
               if opt.language == 'cs' then
                 p = torch.Tensor{0.53, 0.13, 0.34,0}
               elseif opt.language == 'de' then
-                p = torch.Tensor{0.35, 0.24, 0.41,0}
+                p = torch.Tensor{0.29, 0.21, 0.41,0.07}
               elseif opt.language == 'fr' then
-                p = torch.Tensor{0.3, 0.28, 0.42,0}
+                p = torch.Tensor{0.26, 0.27, 0.42,0.03}
               end
               which_op = torch.multinomial(p, 1, true)[1] 
               if which_op == 1 then 
