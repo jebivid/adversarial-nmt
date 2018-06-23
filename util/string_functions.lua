@@ -1,6 +1,7 @@
 function remove_special_chars(instance, M, ctrl)
-    -- used python3 to preprocess which escapes special characters.
+    -- used python2 to preprocess which escapes special characters.
     -- preventing manipulations of some of these entities to be considered as legit adversarial manipulations
+    -- (for targeted and controlled attacks)
     local st_ = string.find(print_word(torch.squeeze(instance), idx2char),'&apos')
     if st_ ~= nil then
       M:sub(st_+1,st_+5):fill(ctrl)
