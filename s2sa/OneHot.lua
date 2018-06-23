@@ -1,4 +1,4 @@
-
+--taken from https://github.com/karpathy/char-rnn
 local OneHot, parent = torch.class('OneHot', 'nn.Module')
 
 function OneHot:__init(outputSize)
