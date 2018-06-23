@@ -32,7 +32,7 @@ cmd:option('-beam_size', 5 , [[adversary beam size]])
 cmd:option('-targ_dict', '', [[targ_dict]])
 cmd:option('-src_dict', '', [[src_dict]])
 cmd:option('-char_dict', '', [[char_dict]])
-cmd:option('-perc_',0.05, [[percentage that the adversary manipulates characters]])
+cmd:option('-perc_',0.2, [[percentage that the adversary manipulates characters]])
 -- rnn model specs
 cmd:text("")
 cmd:text("**Model options**")
